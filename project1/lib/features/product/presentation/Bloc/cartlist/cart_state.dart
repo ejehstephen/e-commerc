@@ -4,12 +4,14 @@ class CartState extends Equatable {
   final List<CartItem> items;
   final bool itemAddedSuccessfully;
   final int uniqueItemsCount;
+  final int cartBadgeCount;
   final String? error;
 
   const CartState({
     this.items = const [],
     this.itemAddedSuccessfully = false,
     this.uniqueItemsCount = 0,
+    this.cartBadgeCount = 0,
     this.error,
   });
 
@@ -17,12 +19,14 @@ class CartState extends Equatable {
     List<CartItem>? items,
     bool? itemAddedSuccessfully,
     int? uniqueItemsCount,
+    int? cartBadgeCount,
     String? error,
   }) {
     return CartState(
       items: items ?? this.items,
       itemAddedSuccessfully: itemAddedSuccessfully ?? this.itemAddedSuccessfully,
       uniqueItemsCount: uniqueItemsCount ?? this.uniqueItemsCount,
+      cartBadgeCount: cartBadgeCount ?? this.cartBadgeCount,
       error: error ?? this.error,
     );
   }
@@ -33,5 +37,5 @@ class CartState extends Equatable {
   double get totalPrice => subtotalPrice + shippingPrice;
 
   @override
-  List<Object?> get props => [items, itemAddedSuccessfully, uniqueItemsCount, error];
+  List<Object?> get props => [items, itemAddedSuccessfully, uniqueItemsCount, cartBadgeCount, error];
 }

@@ -7,7 +7,7 @@ class AppTheme {
     return ThemeData(
       primaryColor: AppColors.primary,
       scaffoldBackgroundColor: AppColors.background,
-      fontFamily: 'Inter', // Add your preferred font
+      fontFamily: 'Inter', 
       appBarTheme: const AppBarTheme(
         elevation: 0,
         backgroundColor: AppColors.background,
@@ -41,7 +41,7 @@ class AppTheme {
         onBackground: AppColors.textPrimary,
         onError: Colors.white,
       ),
-      textTheme: const TextTheme( // Example text theme
+      textTheme: const TextTheme( 
         headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
         headlineMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
         headlineSmall: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: AppColors.textPrimary),

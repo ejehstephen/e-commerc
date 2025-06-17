@@ -38,9 +38,9 @@ class MainScaffoldWithNav extends StatelessWidget {
             icon: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
                 return badges.Badge(
-                  showBadge: state.totalItems > 0,
+                  showBadge: state.cartBadgeCount > 0,
                   badgeContent: Text(
-                    state.totalItems.toString(),
+                    state.cartBadgeCount.toString(),
                     style: const TextStyle(color: Colors.white, fontSize: 10),
                   ),
                   badgeStyle: const badges.BadgeStyle(
@@ -54,9 +54,9 @@ class MainScaffoldWithNav extends StatelessWidget {
             activeIcon: BlocBuilder<CartCubit, CartState>(
               builder: (context, state) {
                 return badges.Badge(
-                  showBadge: state.totalItems > 0,
+                  showBadge: state.cartBadgeCount > 0,
                   badgeContent: Text(
-                    state.totalItems.toString(),
+                    state.cartBadgeCount.toString(),
                     style: const TextStyle(color: Colors.white, fontSize: 10),
                   ),
                   badgeStyle: const badges.BadgeStyle(

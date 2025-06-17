@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project1/core/constants/app_colors.dart';
 import 'package:project1/features/product/presentation/Bloc/productlist/productlist_cubit.dart';
 import 'package:project1/features/product/presentation/widgets/product_card.dart';
-// import 'package:ecommerce_app/features/product/presentation/widgets/custom_app_bar.dart'; // You'd create this
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -72,7 +71,6 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
              const Divider(thickness: 0.15,),
@@ -99,11 +97,11 @@ class _HomePageState extends State<HomePage> {
                 if (state is ProductListLoaded) {
                   return Container(
                     constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.7, // 70% of screen height
+                      maxHeight: MediaQuery.of(context).size.height * 0.7, 
                     ),
                     child: GridView.builder(
                       shrinkWrap: true,
-                      // physics: const NeverScrollableScrollPhysics(),
+                      
                       padding: const EdgeInsets.all(16.0),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,

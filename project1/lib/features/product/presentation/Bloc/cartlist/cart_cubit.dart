@@ -16,11 +16,17 @@ class CartCubit extends Cubit<CartState> {
       // Product already in cart, increase quantity
       final existingItem = updatedItems[itemIndex];
       updatedItems[itemIndex] = existingItem.copyWith(quantity: existingItem.quantity + 1);
+      emit(state.copyWith(items: updatedItems));
     } else {
       // Add new product to cart
       updatedItems.add(CartItem(product: product, quantity: 1));
+      // Increment badge count only when new item is added
+      emit(state.copyWith(
+        items: updatedItems,
+        itemAddedSuccessfully: true,
+        cartBadgeCount: state.cartBadgeCount + 1,
+      ));
     }
-    emit(state.copyWith(items: updatedItems, itemAddedSuccessfully: true));
     // Reset flag after a short delay or when consumed by UI
     Future.delayed(const Duration(milliseconds: 100), () => emit(state.copyWith(itemAddedSuccessfully: false)));
   }
@@ -28,7 +34,10 @@ class CartCubit extends Cubit<CartState> {
   void removeProduct(String productId) {
     final List<CartItem> updatedItems = List.from(state.items);
     updatedItems.removeWhere((item) => item.product.id == productId);
-    emit(state.copyWith(items: updatedItems));
+    emit(state.copyWith(
+      items: updatedItems,
+      cartBadgeCount: state.cartBadgeCount - 1,
+    ));
   }
 
   void incrementQuantity(String productId) {
@@ -48,11 +57,15 @@ class CartCubit extends Cubit<CartState> {
       final existingItem = updatedItems[itemIndex];
       if (existingItem.quantity > 1) {
         updatedItems[itemIndex] = existingItem.copyWith(quantity: existingItem.quantity - 1);
+        emit(state.copyWith(items: updatedItems));
       } else {
         // Remove if quantity becomes 0 or less
         updatedItems.removeAt(itemIndex);
+        emit(state.copyWith(
+          items: updatedItems,
+          cartBadgeCount: state.cartBadgeCount - 1,
+        ));
       }
-      emit(state.copyWith(items: updatedItems));
     }
   }
 }

@@ -70,6 +70,8 @@ class CartItemWidget extends StatelessWidget {
                   Row(
                     children: [
                       Container(
+                         width: 40,
+                        height: 40,
                          decoration: BoxDecoration(
                           color: AppColors.grey,
                           borderRadius: BorderRadius.circular(16),
@@ -102,6 +104,8 @@ class CartItemWidget extends StatelessWidget {
                       ),
                        const SizedBox(width: 10),
                       Container(
+                        width: 40,
+                        height: 40,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16),
