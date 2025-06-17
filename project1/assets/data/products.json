@@ -1,0 +1,34 @@
+[
+    {
+      "id": "1",
+      "name": "Apple iPhone 16 128GB|Teal",
+      "description": "This pre-owned product is not Apple certified, but has been professionally inspected, tested and cleaned by Amazon-qualified suppliers. There will be no visible cosmetic imperfections when held at an arm's length.",
+      "price": 700.00,
+      "imageUrl": "assets/images/Image.png",
+      "category": "Smartphones"
+    },
+    {
+      "id": "2",
+      "name": "M4 Macbook Air 13\" 256GB|Sky blue",
+      "description": "The incredibly thin and light MacBook Air is now more powerful than ever. It features a brilliant Retina display, new Magic Keyboard, Touch ID, processors with up to twice the performance, faster graphics, and double the storage capacity.",
+      "price": 1000.00,
+      "imageUrl": "assets/images/Image2.png",
+      "category": "Laptops"
+    },
+    {
+      "id": "3",
+      "name": "Google Pixel 9A 128GB|Iris",
+      "description": "Meet Pixel 9A, the helpful Google phone at a helpful price. It has the things you want in a phone, for less than you’d expect. Get the amazing camera, fast charging battery, and the Google Assistant built in.",
+      "price": 499.00,
+      "imageUrl": "assets/images/Image3.png",
+      "category": "Smartphones"
+    },
+    {
+      "id": "4",
+      "name": "Apple Airpods 4 Active Noise Cancellation",
+      "description": "AirPods Pro (4th generation) have been re-engineered for even richer audio experiences. Next-level Active Noise Cancellation and Adaptive Transparency reduce more external noise.",
+      "price": 129.00,
+      "imageUrl": "assets/images/Image4.png",
+      "category": "Accessories"
+    }
+  ]
